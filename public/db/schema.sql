@@ -1,10 +1,12 @@
+DROP DATABASE employees_db;
+
 CREATE DATABASE IF NOT EXISTS employees_db;
 
 USE employees_db;
 
 CREATE TABLE departments(
     department_id INT AUTO_INCREMENT PRIMARY KEY,
-    department_name VARCHAR(100)
+    department_name VARCHAR(100) UNIQUE
 );
 
 CREATE TABLE roles(
@@ -22,6 +24,7 @@ CREATE TABLE employees(
     employee_last_name VARCHAR(100),
     role_id INT,
     manager_id INT,
+    CONSTRAINT UC_employees UNIQUE (employee_last_name, employee_first_name),
     FOREIGN KEY (role_id)
-    REFERENCES roles(role_id)
+    REFERENCES roles(role_id)    
 );

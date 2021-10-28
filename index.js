@@ -1,17 +1,25 @@
 const mysql = require("mysql2");
 const inquirer = require("inquirer");
 const inquirerMenu = require("inquirer-menu");
-// const Employee = require("./public/lib/employee");
-// const Department = require("./public/lib/department");
-// const Role = require("./public/lib/role");
-// const {mainMenu, mainMenu2} = require("./public/lib/questions");
-const {menuStart, menuIndex} = require("./public/lib/lib_index");
+const chalk = require("chalk");
+
+const { menuStart, menuIndex } = require("./public/lib/lib_index");
+const {connection} = require("./public/db/connection");
 
 
 const init = async () => {
+    console.log("\n");
     const menuSelection = await menuStart();
-    console.log(menuSelection);
-    await menuIndex(menuSelection.menuOptions);
+    if (menuSelection.menuOptions !== "Exit application...\n") {
+        menuIndex(menuSelection.menuOptions)
+            .then(() => {
+                console.log("\n");
+                init()
+            });
+    } else{
+    console.log(chalk.red("Closing Employee Management System..."));
+        process.exit(0);
+    };
     // await menuStart();
     // console.log(data);
 };
