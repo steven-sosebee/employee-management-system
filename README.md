@@ -11,7 +11,7 @@ This is a proof-of-concept for a command line interface (CLI) for a content mang
 
 This application utilizes a back-end database and allows the user to interact with the data to add, delete, and update records.  this small example can be used as a template to expand to a larger dataset.
 
-undefined
+[Demo Video](https://drive.google.com/file/d/1AJcezLshs4RNZ0SeU3S_G0xWFhCm_qIy/view)
 
 ## Table of Contents
 1. [Installation](#installation)
@@ -29,13 +29,10 @@ to use the program, install npm package requirements and call the 'node index.js
 
 The CLI will display the options.  To begin, make a selection and follow the prompts.
 
-![demo](TBD)
 
 ## Contributions
 
-None
-
-undefined
+Anyone interested in adding to this code, can contact the creator below.
 
 ## Tests
 
